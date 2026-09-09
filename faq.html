@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Frequently asked questions about Death Stranding and this fan site." />
+    <link rel="icon" href="assets/logo/death-stranding-high-resolution-logo-grayscale-transparent.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>FAQ | Death Stranding 2</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="navbar">
+      <div class="navbar__container">
+        <a href="index.html" class="navbar__container--logo">
+          <img src="assets/logo/red-death-stranding-high-resolution-logo-transparent.png" alt="Death Stranding" />
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="main-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="story.html">Story</a></li>
+            <li><a href="characters.html">Characters</a></li>
+            <li><a href="editions.html">Editions</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a class="is-active" href="faq.html">FAQ</a></li>
+            <li><a class="btn" href="login.html"><i class="fas fa-user"></i> Log In</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <header class="page-hero page-hero--poster">
+        <div class="page-hero__inner">
+          <p class="eyebrow">Support</p>
+          <h1>Frequently asked questions</h1>
+          <p>Answers drawn from Kojima Productions public FAQs and this fan site’s own notes.</p>
+        </div>
+      </header>
+
+      <section class="section faq">
+        <div class="container">
+          <ul class="faq-menu">
+            <li><button type="button" class="active" data-faq-filter="all">All</button></li>
+            <li><button type="button" data-faq-filter="start">Getting started</button></li>
+            <li><button type="button" data-faq-filter="pricing">Pricing</button></li>
+          </ul>
+          <div class="faq-content">
+            <div class="faq-group is-open" data-category="start">
+              <button class="faq-group-header" type="button">
+                <h4>Do I need to play the first Death Stranding?</h4>
+                <i class="fas fa-minus"></i>
+              </button>
+              <div class="faq-group-body open">
+                <p>
+                  The sequel tells its own story, but the first game explains why
+                  Sam walks, why the Beach matters, and why connection is never free.
+                </p>
+              </div>
+            </div>
+            <div class="faq-group" data-category="start">
+              <button class="faq-group-header" type="button">
+                <h4>Can I visit the Ludens hallway at the office?</h4>
+                <i class="fas fa-plus"></i>
+              </button>
+              <div class="faq-group-body">
+                <p>
+                  That area is not open to the public. Access to the office floor
+                  is restricted for building security.
+                </p>
+              </div>
+            </div>
+            <div class="faq-group" data-category="start">
+              <button class="faq-group-header" type="button">
+                <h4>Do you accept pitches for new game concepts?</h4>
+                <i class="fas fa-plus"></i>
+              </button>
+              <div class="faq-group-body">
+                <p>
+                  Kojima Productions focuses on internally developed original
+                  concepts and does not accept external pitches.
+                </p>
+              </div>
+            </div>
+            <div class="faq-group" data-category="pricing">
+              <button class="faq-group-header" type="button">
+                <h4>Where can I buy official merchandise?</h4>
+                <i class="fas fa-plus"></i>
+              </button>
+              <div class="faq-group-body">
+                <p>
+                  Official merch is sold through Kojima Productions channels.
+                  This fan site does not process orders.
+                </p>
+              </div>
+            </div>
+            <div class="faq-group" data-category="pricing">
+              <button class="faq-group-header" type="button">
+                <h4>Are the prices on the Editions page real?</h4>
+                <i class="fas fa-plus"></i>
+              </button>
+              <div class="faq-group-body">
+                <p>
+                  They are layout examples inspired by published editions. Check
+                  PlayStation Store or your local retailer for live pricing.
+                </p>
+              </div>
+            </div>
+            <div class="faq-group" data-category="start">
+              <button class="faq-group-header" type="button">
+                <h4>Is there an intern program?</h4>
+                <i class="fas fa-plus"></i>
+              </button>
+              <div class="faq-group-body">
+                <p>
+                  There is no intern program at this time. Updates are posted on
+                  the official Careers page.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <h4>Still stuck?</h4>
+          <ul><li><a href="contact.html">Contact</a></li></ul>
+        </div>
+        <div>
+          <h4>Editions</h4>
+          <ul><li><a href="editions.html">Compare</a></li></ul>
+        </div>
+        <div>
+          <h4>About</h4>
+          <ul><li><a href="about.html">This site</a></li></ul>
+        </div>
+        <div>
+          <h4>Home</h4>
+          <ul><li><a href="index.html">Back to home</a></li></ul>
+        </div>
+      </div>
+      <div class="footer__copyright">
+        <p>© <span id="year"></span> Fan project.</p>
+      </div>
+    </footer>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

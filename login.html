@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Log in to the Death Stranding fan site." />
+    <link rel="icon" href="assets/logo/death-stranding-high-resolution-logo-grayscale-transparent.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Log in | Death Stranding 2</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="navbar">
+      <div class="navbar__container">
+        <a href="index.html" class="navbar__container--logo">
+          <img src="assets/logo/red-death-stranding-high-resolution-logo-transparent.png" alt="Death Stranding" />
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="main-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="story.html">Story</a></li>
+            <li><a href="characters.html">Characters</a></li>
+            <li><a href="editions.html">Editions</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a class="btn is-active" href="login.html"><i class="fas fa-user"></i> Log In</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main" class="section">
+      <div class="form-card">
+        <p class="eyebrow">Bridges ID</p>
+        <h1 class="section-heading">Log in</h1>
+        <p class="section-copy">Demo form only. Nothing is sent to a server.</p>
+        <form data-form data-success="Strand verified. Welcome back, porter.">
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="form-row">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" minlength="6" required />
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Log in</button>
+            <p class="form-note">Need a terminal? <a href="contact.html">Contact Drawbridge</a></p>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p style="text-align: center"><a href="index.html">Home</a> · <a href="faq.html">FAQ</a></p>
+      </div>
+      <div class="footer__copyright">
+        <p>© <span id="year"></span> Fan project.</p>
+      </div>
+    </footer>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

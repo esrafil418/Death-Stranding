@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Characters from Death Stranding 2: On the Beach." />
+    <link rel="icon" href="assets/logo/death-stranding-high-resolution-logo-grayscale-transparent.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Characters | Death Stranding 2</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="navbar">
+      <div class="navbar__container">
+        <a href="index.html" class="navbar__container--logo">
+          <img src="assets/logo/red-death-stranding-high-resolution-logo-transparent.png" alt="Death Stranding" />
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="main-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="story.html">Story</a></li>
+            <li><a class="is-active" href="characters.html">Characters</a></li>
+            <li><a href="editions.html">Editions</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a class="btn" href="login.html"><i class="fas fa-user"></i> Log In</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <header class="page-hero page-hero--lea">
+        <div class="page-hero__inner">
+          <p class="eyebrow">Cast</p>
+          <h1>People on the strand</h1>
+          <p>Porters, bridges, and the ones who wait. Connection is never a solo job.</p>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="container character-grid">
+          <article class="character-card">
+            <img src="assets/images/death-stranding-solo-baby.jpg" alt="Sam Bridges with Lou" />
+            <div class="card-body">
+              <span>Porter</span>
+              <h3>Sam Bridges</h3>
+              <p>A repatriate who would rather walk than talk. The network still needs his feet.</p>
+            </div>
+          </article>
+          <article class="character-card">
+            <img src="assets/images/death-stranding-Lea.jpg" alt="Fragile on the trail" />
+            <div class="card-body">
+              <span>Fragile Express</span>
+              <h3>Fragile</h3>
+              <p>She rebuilt a company from ashes and still jumps farther than anyone else.</p>
+            </div>
+          </article>
+          <article class="character-card">
+            <img src="assets/images/Lea.jpg" alt="Tomorrow" />
+            <div class="card-body">
+              <span>Drawbridge</span>
+              <h3>Tomorrow</h3>
+              <p>A new companion with a future-facing name and a past that will not stay buried.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <h4>Story</h4>
+          <ul><li><a href="story.html">World overview</a></li></ul>
+        </div>
+        <div>
+          <h4>News</h4>
+          <ul><li><a href="news.html">Latest posts</a></li></ul>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <ul><li><a href="faq.html">FAQ</a></li></ul>
+        </div>
+        <div>
+          <h4>Home</h4>
+          <ul><li><a href="index.html">Back to home</a></li></ul>
+        </div>
+      </div>
+      <div class="footer__copyright">
+        <p>© <span id="year"></span> Fan project. Character names belong to their respective owners.</p>
+      </div>
+    </footer>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

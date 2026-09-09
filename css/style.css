@@ -1,10 +1,13 @@
 @font-face {
   font-family: Lato-regular;
-  src: url(/assets/fonts/Lato-Regular.ttf) format("truetype");
+  src: url("../assets/fonts/Lato-Regular.ttf") format("truetype");
+  font-display: swap;
 }
+
 @font-face {
   font-family: Lato-light;
-  src: url(/assets/fonts/Lato-Light.ttf) format("truetype");
+  src: url("../assets/fonts/Lato-Light.ttf") format("truetype");
+  font-display: swap;
 }
 
 * {
@@ -15,705 +18,747 @@
 
 :root {
   --primary-color: #4891ff;
+  --accent-red: #ff4d4d;
   --light-color: #f4f4f6;
   --dark-color: #111;
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --max-width: 1180px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Lato-regular";
-  font-size: 14px;
-  line-height: 1.5;
-  /* background-color: #071021; */
+  font-family: Lato-regular, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   overflow-x: hidden;
-  background-image: linear-gradient(rgba(6, 10, 20, 0.7), rgba(6, 10, 20, 0.7)),
-    url("/assets/images/death-stranding-main-poster.jpg");
+  background-image: linear-gradient(rgba(6, 10, 20, 0.72), rgba(6, 10, 20, 0.72)),
+    url("../assets/images/death-stranding-main-poster.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   color: var(--light-color);
+  min-height: 100vh;
 }
 
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(6, 10, 20, 0.85);
+  background: rgba(6, 10, 20, 0.82);
   pointer-events: none;
   z-index: 0;
+}
+
+body.nav-open,
+body.modal-open {
+  overflow: hidden;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -48px;
+  z-index: 2000;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 a {
   text-decoration: none;
   color: var(--light-color);
-  font-size: 1.1rem;
 }
 
 ul {
   list-style: none;
 }
 
-img {
-  max-width: 100%;
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
 }
 
-/* ! Navbar section */
+.container {
+  width: min(var(--max-width), calc(100% - 32px));
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.section {
+  position: relative;
+  z-index: 2;
+  padding: 72px 0;
+}
+
+.section-heading {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.section-copy {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: Lato-light, sans-serif;
+}
+
+.btn,
+.hero-btn,
+.pricing-card__btn,
+.footer__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover,
+.hero-btn:hover,
+.pricing-card__btn:hover,
+.footer__btn:hover {
+  opacity: 0.86;
+  transform: translateY(-1px);
+}
+
+.btn-primary,
+.hero-btn.btn-primary,
+.pricing-card__btn,
+.footer__btn {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-ghost,
+.hero-btn {
+  background: var(--light-color);
+  color: #222;
+}
+
 .navbar {
-  background: rgba(255, 255, 255, 0.12);
-  padding: 14px 0;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 0;
   position: sticky;
   top: 0;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   z-index: 1002;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/*? logo  */
-.navbar__container--logo img {
-  width: 150px;
-  height: auto;
-  margin-left: 15px;
+.navbar.is-scrolled {
+  background: rgba(8, 12, 24, 0.88);
 }
 
-.navbar .navbar__container {
+.navbar__container {
+  width: min(1240px, calc(100% - 28px));
+  margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  gap: 16px;
   position: relative;
   z-index: 1003;
-  gap: 90px;
 }
 
-.navbar .main-menu ul {
-  display: flex;
+.navbar__container--logo img {
+  width: 132px;
+  height: auto;
 }
 
-.main-menu a {
-  text-decoration: none;
-  color: var(--light-color);
-  font-size: 1.1rem;
-  margin: 0 15px;
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  background: var(--glass);
+  color: #fff;
+  cursor: pointer;
 }
 
 .main-menu ul {
-  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .navbar ul li a {
-  padding: 10px 20px;
+  padding: 10px 14px;
   display: block;
   font-weight: 600;
-  transition: 0.5s;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
 }
 
-.navbar ul li a:hover {
+.navbar ul li a:hover,
+.navbar ul li a.is-active {
   color: var(--primary-color);
-  opacity: 0.8;
 }
 
-/*? login icon  */
-.navbar ul li a i {
-  margin-right: 10px;
-}
-
-.navbar ul li:last-child a {
-  margin-left: 40px;
+.navbar ul li a.btn {
+  margin-left: 8px;
   background: var(--light-color);
   color: var(--dark-color);
   border-radius: 13px;
+  padding: 10px 18px;
 }
 
-.navbar ul li:last-child a:hover {
+.navbar ul li a.btn:hover {
   color: var(--primary-color);
 }
 
-/* ! Hero section */
 .hero {
-  height: 90vh;
-  margin-top: 80px;
-  margin-bottom: 50px;
   position: relative;
+  z-index: 2;
+  padding: 48px 0 72px;
 }
 
-.hero .hero__container {
-  max-width: 70%;
+.hero__container {
+  width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 0 15px;
-  position: relative;
-  min-height: 75vh;
+  min-height: min(78vh, 760px);
   display: flex;
-  align-items: start;
-  padding: 10px 15px;
-  background-image: linear-gradient(
-      rgba(6, 10, 20, 0.55),
-      rgba(6, 10, 20, 0.35)
-    ),
-    url("/assets/images/death-stranding-solo-baby.jpg");
+  align-items: center;
+  padding: 48px;
+  background-image: linear-gradient(rgba(6, 10, 20, 0.55), rgba(6, 10, 20, 0.42)),
+    url("../assets/images/death-stranding-solo-baby.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
-  border-radius: 13px;
+  background-position: center right;
+  border-radius: 16px;
   overflow: hidden;
+  position: relative;
 }
 
-.hero .hero__container::before {
+.hero__container::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    180deg,
-    rgba(6, 10, 20, 0.45) 0%,
-    rgba(6, 10, 20, 0.65) 100%
+    100deg,
+    rgba(6, 10, 20, 0.72) 0%,
+    rgba(6, 10, 20, 0.28) 70%
   );
-  pointer-events: none;
-}
-
-.hero-heading {
-  font-size: 4rem;
-  line-height: 1.2;
-  font-weight: 600;
-  margin: 40px 200px 20px 0;
 }
 
 .hero-content {
-  width: 70%;
+  width: min(640px, 100%);
   position: relative;
   z-index: 2;
-  color: var(--light-color);
+}
+
+.eyebrow {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.hero-heading,
+.page-hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.12;
+  font-weight: 600;
+  margin-bottom: 18px;
 }
 
 .hero-text {
-  width: 49.5%;
-  text-align: justify;
-  margin-bottom: 30px;
+  max-width: 52ch;
+  margin-bottom: 28px;
   color: rgba(255, 255, 255, 0.9);
-  font-family: "Lato-light";
+  font-family: Lato-light, sans-serif;
 }
 
-.hero-btn {
-  display: inline-block;
-  padding: 13px 20px;
-  margin: 0 8px;
-  background: var(--light-color);
-  color: #333;
-  font-weight: 600;
-  text-decoration: none;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  text-align: center;
-  transition: 0.5s;
-  box-shadow: 0 6px 18px rgba(3, 10, 30, 0.4);
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.hero-btn:hover {
-  opacity: 0.8;
+.page-hero {
+  position: relative;
+  z-index: 2;
+  padding: 56px 0 24px;
 }
 
-.btn-primary {
-  background: var(--primary-color);
-  color: var(--light-color);
+.page-hero__inner {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 40px;
+  border-radius: 16px;
+  background: linear-gradient(rgba(6, 10, 20, 0.55), rgba(6, 10, 20, 0.55)),
+    url("../assets/images/death-stranding-Lea.jpg") center / cover no-repeat;
 }
 
-/* ! Video section */
+.page-hero.page-hero--poster .page-hero__inner {
+  background-image: linear-gradient(rgba(6, 10, 20, 0.6), rgba(6, 10, 20, 0.6)),
+    url("../assets/images/death-stranding-main-poster.jpg");
+}
+
+.page-hero.page-hero--lea .page-hero__inner {
+  background-image: linear-gradient(rgba(6, 10, 20, 0.58), rgba(6, 10, 20, 0.58)),
+    url("../assets/images/Lea.jpg");
+}
+
+.page-hero p {
+  max-width: 62ch;
+  color: rgba(255, 255, 255, 0.88);
+}
+
 .video {
-  background: rgba(0, 0, 0, 0.6);
-  color: var(--light-color);
-  padding: 20px 0 40px;
+  background: rgba(0, 0, 0, 0.55);
 }
 
 .video__container {
-  max-width: 800px;
-  height: 70%;
-  margin: 50px auto 100px;
-  padding: 0 15px;
+  width: min(920px, calc(100% - 32px));
+  margin: 0 auto;
 }
 
 .video-heading {
-  font-size: 2.2rem;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
   line-height: 1.4;
-  font-weight: normal;
-  margin: 40px 0 40px;
+  font-weight: 400;
+  margin-bottom: 32px;
   text-align: center;
-  position: relative;
-  z-index: 2;
-  color: var(--light-color);
-}
-
-.video .video-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.video .video-preview {
-  margin-bottom: 20px;
-  width: 100%;
-  max-width: 920px;
-  border-radius: 12px;
-  display: block;
-  position: relative;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .video-content a {
   position: relative;
-  display: inline-block;
-  overflow: visible;
+  display: block;
 }
 
-/*? play svg  */
-.video-content > a::before {
+.video-preview {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  filter: brightness(0.7);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.video-content a::before,
+.video-content a::after {
   content: "";
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.video-content a::before {
   width: 84px;
   height: 84px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   z-index: 3;
-  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
-  pointer-events: none;
 }
 
-.video-content > a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.video-content a::after {
   width: 36px;
   height: 36px;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><polygon points='5,3 19,12 5,21' fill='%23ffffff' /></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><polygon points='5,3 19,12 5,21' fill='%23ffffff'/></svg>");
   background-repeat: no-repeat;
-  background-position: center;
   background-size: contain;
   z-index: 4;
-  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.45));
-  transition: transform 180ms ease, filter 180ms ease;
-  pointer-events: none;
-}
-
-.video-content > a:hover::before {
-  transform: translate(-50%, -50%) scale(1.06);
-  box-shadow: 0 14px 40px rgba(2, 6, 23, 0.7),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.video-content > a:hover::after {
-  transform: translate(-50%, -50%) scale(1.05);
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.55));
-}
-
-/* ? video preview  */
-.video-content > a:hover::before {
-  background-image: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.12) 50%,
-      rgba(255, 255, 255, 0) 100%
-    ),
-    rgba(255, 255, 255, 0.1);
-  background-blend-mode: overlay;
 }
 
 .video-content a:hover .video-preview {
   transform: scale(1.02);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
+  filter: brightness(0.9);
 }
 
-.video-content a .video-preview {
-  display: block;
-  filter: brightness(0.62) contrast(0.95) saturate(0.95);
-  transition: filter 240ms ease, transform 240ms ease;
-}
-
-.video-content a:hover .video-preview {
-  filter: brightness(0.86) contrast(1) saturate(1);
-}
-
-/*! Testimonials */
 .testimonials {
-  padding: 40px 0;
   background: rgba(17, 17, 17, 0.48);
-  color: var(--light-color);
 }
 
-.testimonials__container {
-  max-width: 70%;
-  margin: 0 auto;
-  padding: 0 15px 100px;
-}
-
-.testimonials-heading {
-  width: 700px;
-  font-size: 2.2rem;
-  line-height: 1.4;
-  font-weight: normal;
-  margin: 40px auto;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-  color: var(--light-color);
-}
-
-.testimonials .testimonials-grid {
+.testimonials-grid,
+.feature-grid,
+.character-grid,
+.news-grid,
+.editions-grid,
+.stat-grid {
   display: grid;
+  gap: 24px;
+}
+
+.testimonials-grid {
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
 }
 
-.testimonials__card p:nth-child(2) {
-  margin-top: 30px;
-  font-weight: bold;
-}
-
-.testimonials__card {
-  background: rgba(255, 255, 255, 0.08);
+.card,
+.testimonials__card,
+.pricing-card,
+.character-card,
+.news-card,
+.stat-card,
+.form-card {
+  background: var(--glass);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  color: var(--light-color);
-  padding: 20px;
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22);
+  padding: 24px;
+}
+
+.testimonials__card:hover,
+.pricing-card:hover,
+.character-card:hover,
+.news-card:hover {
+  transform: translateY(-5px);
   transition: transform 0.3s ease;
 }
 
-.testimonials__card:hover {
-  transform: translateY(-5px);
+.testimonials__card p:last-child {
+  margin-top: 20px;
+  font-weight: 700;
 }
 
-.testimonials__card p,
-.testimonials__card h4 {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  color: rgba(255, 255, 255, 0.95);
+.feature-grid {
+  grid-template-columns: repeat(3, 1fr);
 }
 
-/*! Pricing */
-.pricing .pricing-grid {
-  display: grid;
+.feature-card i {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.feature-card h3 {
+  margin-bottom: 8px;
+}
+
+.stat-grid {
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 8px;
+}
+
+.stat-card {
+  text-align: center;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+.character-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.character-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.character-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.character-card .card-body {
+  padding: 20px;
+}
+
+.character-card h3 {
+  margin-bottom: 6px;
+}
+
+.character-card span {
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pricing {
+  padding-bottom: 80px;
+}
+
+.pricing-grid,
+.editions-grid {
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  margin-top: 50px;
-  background: transparent;
 }
 
-.pricing__container {
-  max-width: 800px;
-  margin: 50px auto 100px;
-  padding: 0 15px;
-  position: relative;
-  z-index: 2;
-}
-
-.pricing__container--header {
-  font-size: 2.2rem;
-  line-height: 1.4;
-  font-weight: normal;
-  margin: 40px 0 20px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-.pricing-card-heading {
-  font-size: 2.2rem;
-  line-height: 1.4;
-  font-weight: normal;
-  margin: 40px 0 20px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-.pricing .pricing-subheading {
-  margin-bottom: 30px;
-  text-align: center;
-  font-size: 1.2rem;
-  line-height: 1.4;
-  font-weight: normal;
-  margin: 20px 0 10px;
-  position: relative;
-  z-index: 2;
-}
-
-.pricing-card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  padding: 20px;
-  transition: transform 0.3s ease;
-  color: var(--light-color);
-  position: relative;
-  z-index: 2;
-}
-
-.pricing-card:hover {
-  transform: translateY(-5px);
-}
-
-.pricing-card p,
-.pricing-card h4 {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  color: rgba(255, 255, 255, 0.95);
-}
-
-.pricing-card-subheading {
-  margin-top: 30px;
-}
-
-.pricing .pricing-card-price {
-  margin-bottom: 30px;
-  padding: 20px 0;
-  border-bottom: 1px solid #ccc;
-}
-
-.pricing ul {
-  margin: 30px 0;
-}
-
-.pricing ul li {
-  margin-bottom: 20px;
-}
-
-.pricing ul li i {
-  margin-right: 10px;
-}
-
-.pricing .pricing-footer {
-  margin: 30px 0;
-  text-align: justify;
-  opacity: 0.5;
+.pricing-card-price {
+  margin: 16px 0 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .price {
   font-size: 2.2rem;
-  line-height: 1.4;
-  font-weight: normal;
-  margin: 40px 0 20px;
 }
 
-.pricing-card__btn {
-  display: inline-block;
-  padding: 13px 20px;
-  font-weight: 600;
-  text-decoration: none;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  text-align: center;
-  transition: 0.5s;
-  display: block;
-  width: 100%;
-  background: var(--primary-color);
-  color: var(--light-color);
+.pricing ul,
+.editions-grid ul {
+  margin: 20px 0 28px;
 }
 
-.pricing-card__btn:hover {
-  opacity: 0.8;
+.pricing ul li,
+.editions-grid ul li {
+  margin-bottom: 12px;
+}
+
+.pricing ul li i,
+.editions-grid ul li i {
+  margin-right: 8px;
+  color: var(--primary-color);
 }
 
 .expensive {
-  background: rgba(0, 0, 0, 0.6);
-  color: var(--light-color);
+  background: rgba(0, 0, 0, 0.55);
 }
 
-/*! FAQ */
+.pricing-footer,
+.legal-note {
+  margin-top: 28px;
+  opacity: 0.55;
+  font-size: 0.9rem;
+}
+
 .faq {
-  padding: 40px 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.faq-menu {
+  max-width: 460px;
+  margin: 0 auto 28px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--dark-color);
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.faq-menu li,
+.faq-menu button {
+  flex: 1;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 8px;
   background: transparent;
-  background: rgba(0, 0, 0, 0.6);
-  color: var(--light-color);
-}
-
-.faq__container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-.faq__header--section {
-  font-size: 2.2rem;
-  line-height: 1.4;
-  font-weight: normal;
-  margin: 40px 0 40px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-.faq .faq-group {
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 20px;
-}
-
-.faq .faq-group .faq-group-header {
-  padding: 20px 0;
-  margin-bottom: 15px;
-  position: relative;
-}
-
-.faq .faq-group .faq-group-header h4 {
+  color: #fff;
   font-weight: 600;
-  width: 95%;
-}
-
-.faq .faq-group .faq-group-header i {
-  position: absolute;
-  right: 0;
-  top: 35px;
-  font-size: 1.3rem;
   cursor: pointer;
 }
 
-.faq .faq-group .faq-group-body {
-  display: none;
+.faq-menu li.active,
+.faq-menu button.active {
+  background: var(--primary-color);
 }
 
-.faq .faq-group .faq-group-body.open {
-  display: block;
+.faq-group {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.faq-group-body {
-  position: relative;
-  z-index: 2;
-}
-
-.faq ul.faq-menu {
-  max-width: 400px;
-  margin: auto;
+.faq-group-header {
+  width: 100%;
+  padding: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--dark-color);
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-weight: 600;
+  gap: 16px;
+  background: none;
+  border: 0;
+  color: inherit;
+  text-align: left;
   cursor: pointer;
-  position: relative;
-  z-index: 2;
 }
 
-.faq ul.faq-menu li {
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-align: center;
+.faq-group-header h4 {
+  font-size: 1.05rem;
 }
 
-.faq ul.faq-menu li.active {
-  background: var(--primary-color);
-  color: #fff;
+.faq-group-body {
+  display: none;
+  padding-bottom: 18px;
+  color: rgba(255, 255, 255, 0.82);
 }
 
-.faq-question {
-  font-size: 1.2rem;
-  line-height: 1.4;
-  font-weight: normal;
-  margin: 20px 0 10px;
-}
-
-.faq-content {
-  margin: 20px 0 100px;
-}
-
-/*! Footer */
-.footer {
-  padding: 40px 0;
-  background: rgba(0, 0, 0, 0.75);
-  color: #fff;
-  position: relative;
-  z-index: 2;
-}
-
-.footer__container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-.footer__card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  color: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  transition: transform 0.3s ease;
-}
-
-.footer__card:hover {
-  transform: translateY(-5px);
-}
-
-.footer__card p,
-.footer__card h4 {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  color: rgba(255, 255, 255, 0.95);
-}
-
-.footer__btn {
-  display: inline-block;
-  padding: 13px 20px;
-  font-weight: 600;
-  text-decoration: none;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  text-align: center;
-  transition: 0.5s;
-  background: var(--primary-color);
-  color: #fff;
+.faq-group-body.open,
+.faq-group.is-open .faq-group-body {
   display: block;
+}
+
+.news-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.news-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card img {
   width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.news-card .card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.news-card time {
+  font-size: 0.82rem;
+  color: var(--primary-color);
+}
+
+.news-card .read-more {
+  margin-top: auto;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.article {
+  width: min(760px, calc(100% - 32px));
+  margin: 0 auto 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.article img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin: 8px 0 24px;
+}
+
+.article p {
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.split img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.form-card {
+  width: min(520px, 100%);
+  margin: 0 auto 80px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-row label {
+  font-weight: 600;
+}
+
+.form-row input,
+.form-row textarea,
+.form-row select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.form-row textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-note {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-note a {
+  color: var(--primary-color);
+}
+
+.footer {
+  padding: 48px 0 24px;
+  background: rgba(0, 0, 0, 0.78);
+  position: relative;
+  z-index: 2;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 32px;
 }
 
 .footer h4 {
-  margin-bottom: 8px;
-  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-size: 1.15rem;
 }
 
 .footer ul li {
-  line-height: 2.5;
+  line-height: 2.2;
 }
 
 .footer a {
   color: #ccc;
 }
 
-.footer i {
-  font-size: 1.5rem;
-  margin-right: 10px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 50px;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer-grid img {
-  width: 30%;
-  height: auto;
-}
-
-.footer .card {
-  margin: 20px 30px 30px 0;
+.footer a:hover {
+  color: #fff;
 }
 
 .footer input[type="email"] {
@@ -721,204 +766,181 @@ img {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin: 20px 0;
+  margin: 16px 0;
+}
+
+.footer__btn {
+  width: 100%;
 }
 
 .footer__copyright {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  font-weight: normal;
-  margin: 60px 0 0;
-  padding: 40px 0 0;
+  margin-top: 40px;
+  padding-top: 24px;
   text-align: center;
-  border-top: 1px solid #222222;
+  border-top: 1px solid #222;
+  font-size: 0.9rem;
 }
 
-.footer__contact {
-  max-width: 35%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  justify-content: center;
+.toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1400;
+  background: #16345f;
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: 0.25s ease;
 }
 
-/* .footer__contact img {
-  width: 60%;
-  margin-bottom: 30px;
-} */
-
-.footer__contact {
-  margin-bottom: 14px;
+.toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Media Queries for Responsive Design */
-@media screen and (max-width: 768px) {
-  /* Navbar */
-  .navbar .navbar__container {
-    justify-content: space-between;
+.trailer-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1500;
+  display: none;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.78);
+  padding: 20px;
+}
+
+.trailer-modal.is-open {
+  display: grid;
+}
+
+.trailer-modal__dialog {
+  width: min(900px, 100%);
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 12px;
+  overflow: visible;
+  position: relative;
+}
+
+.trailer-modal iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
+.modal-close {
+  position: absolute;
+  top: -42px;
+  right: 0;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+  .testimonials-grid,
+  .feature-grid,
+  .character-grid,
+  .news-grid,
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .navbar .main-menu ul {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 14px;
+    left: 14px;
+    background: rgba(8, 12, 24, 0.96);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
     display: none;
   }
 
-  .navbar ul li:last-child a {
-    margin-left: 0;
-    margin-top: 10px;
+  .main-menu.is-open {
+    display: block;
   }
 
-  /* Hero Section */
-  .hero {
-    margin-top: 40px;
-    height: auto;
-  }
-
-  .hero .hero__container {
-    max-width: 90%;
-    min-height: auto;
-    padding: 20px;
-    background-image: linear-gradient(
-        rgba(6, 10, 20, 0.55),
-        rgba(6, 10, 20, 0.35)
-      ),
-      url("/assets/images/death-stranding-Lea.jpg");
-    height: 500px;
-  }
-
-  .hero-heading {
-    font-size: 1.2rem;
-    margin: 20px 0;
-  }
-
-  .hero-content {
-    font-size: 0.9rem;
-    width: 100%;
-    margin-top: 50%;
-  }
-
-  .hero-text {
-    width: 100%;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 5px;
-  }
-
-  .hero-btn {
-    width: 30%;
-    margin: 1px 4px;
-    display: inline;
-    padding: 8px 12px;
-    font-weight: bold;
-    font-size: 0.7rem;
-  }
-
-  /* Video Section */
-  .video__container {
-    max-width: 90%;
-    margin: 30px auto;
-  }
-
-  .video-heading {
-    font-size: 1.3rem;
-  }
-
-  /* Testimonials */
-  .testimonials__container {
-    max-width: 90%;
-  }
-
-  .testimonials-heading {
-    width: 100%;
-    font-size: 1.3rem;
-  }
-
-  .testimonials .testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  /* Pricing */
-  .pricing .pricing-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .pricing__container {
-    max-width: 90%;
-  }
-
-  .pricing__container--header {
-    font-size: 2rem;
-  }
-
-  .pricing .pricing-subheading {
-    font-size: 1rem;
-  }
-
-  /* FAQ */
-  .faq__container {
-    max-width: 90%;
-  }
-
-  .faq__header--section {
-    font-size: 1.5rem;
-  }
-
-  .faq ul.faq-menu {
-    gap: 10px;
-    font-size: 0.8rem;
-  }
-
-  /* Footer */
-  .footer-grid {
-    display: flex;
+  .main-menu ul {
     flex-direction: column;
-    align-items: start;
-    gap: 30px;
+    align-items: stretch;
+    padding: 12px;
   }
 
-  .footer__contact {
-    width: 100%;
-  }
-
-  /* .footer__contact img {
-    width: fit-content;
-  } */
-
-  .footer__card {
-    width: 100%;
+  .navbar ul li a.btn {
+    margin-left: 0;
   }
 }
 
-/* Small phone screens */
-@media screen and (max-width: 480px) {
-  .hero-heading {
-    font-size: 1rem;
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
   }
 
-  .hero-content {
-    font-size: 0.9rem;
-    width: 100%;
-    margin-top: 45%;
+  .hero__container,
+  .page-hero__inner {
+    padding: 28px 20px;
+    min-height: 520px;
+    background-position: center;
   }
 
-  .hero-btn {
-    padding: 4px 7px;
+  .hero__container {
+    background-image: linear-gradient(rgba(6, 10, 20, 0.55), rgba(6, 10, 20, 0.42)),
+      url("../assets/images/death-stranding-Lea.jpg");
   }
 
-  .video-heading,
-  .testimonials-heading,
-  .pricing__container--header {
-    font-size: 1.5rem;
+  .hero-buttons .hero-btn {
+    flex: 1 1 140px;
   }
 
+  .testimonials-grid,
+  .feature-grid,
+  .character-grid,
+  .news-grid,
+  .pricing-grid,
+  .editions-grid,
+  .stat-grid,
+  .split,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .split img,
+  .character-card img {
+    height: 240px;
+  }
+
+  .faq-menu {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
   .navbar__container--logo img {
-    width: 120px;
+    width: 108px;
   }
 
-  .footer h4 {
-    font-size: 1rem;
+  .hero-heading {
+    font-size: 1.7rem;
+  }
+
+  .section {
+    padding: 48px 0;
   }
 }

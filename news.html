@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="News and field notes from the Death Stranding fan site." />
+    <link rel="icon" href="assets/logo/death-stranding-high-resolution-logo-grayscale-transparent.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>News | Death Stranding 2</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="navbar">
+      <div class="navbar__container">
+        <a href="index.html" class="navbar__container--logo">
+          <img src="assets/logo/red-death-stranding-high-resolution-logo-transparent.png" alt="Death Stranding" />
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="main-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="story.html">Story</a></li>
+            <li><a href="characters.html">Characters</a></li>
+            <li><a href="editions.html">Editions</a></li>
+            <li><a class="is-active" href="news.html">News</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a class="btn" href="login.html"><i class="fas fa-user"></i> Log In</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <header class="page-hero page-hero--lea">
+        <div class="page-hero__inner">
+          <p class="eyebrow">Field notes</p>
+          <h1>News</h1>
+          <p>Dispatches from the chiral network: trailers, companions, and the road ahead.</p>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="container news-grid">
+          <article class="news-card">
+            <img src="assets/images/Lea.jpg" alt="Cinematic close-up" />
+            <div class="card-body">
+              <time datetime="2025-06-26">June 26, 2025</time>
+              <h2>On the Beach has arrived</h2>
+              <p>Sam’s new expedition is live. Here is how this fan site is mapping the journey.</p>
+              <a class="read-more" href="article.html">Read article →</a>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="assets/images/death-stranding-Lea.jpg" alt="Fragile on a mountain path" />
+            <div class="card-body">
+              <time datetime="2024-12-01">December 1, 2024</time>
+              <h2>Fragile Express still delivers</h2>
+              <p>Why the sequel doubles down on companions without dropping the lonely walk.</p>
+              <a class="read-more" href="article.html">Read article →</a>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="assets/images/death-stranding-main-poster.jpg" alt="Sam on a precipice" />
+            <div class="card-body">
+              <time datetime="2024-09-24">September 24, 2024</time>
+              <h2>Reading the new trailer</h2>
+              <p>Beaches, BT storms, and a question Kojima will not stop asking.</p>
+              <a class="read-more" href="article.html">Read article →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <h4>Subscribe</h4>
+          <ul><li><a href="contact.html">Get in touch</a></li></ul>
+        </div>
+        <div>
+          <h4>Story</h4>
+          <ul><li><a href="story.html">Overview</a></li></ul>
+        </div>
+        <div>
+          <h4>FAQ</h4>
+          <ul><li><a href="faq.html">Common questions</a></li></ul>
+        </div>
+        <div>
+          <h4>Home</h4>
+          <ul><li><a href="index.html">Back to home</a></li></ul>
+        </div>
+      </div>
+      <div class="footer__copyright">
+        <p>© <span id="year"></span> Fan project. Dates are illustrative.</p>
+      </div>
+    </footer>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

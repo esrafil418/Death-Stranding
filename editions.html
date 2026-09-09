@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Death Stranding 2 editions and pricing." />
+    <link rel="icon" href="assets/logo/death-stranding-high-resolution-logo-grayscale-transparent.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Editions | Death Stranding 2</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="navbar">
+      <div class="navbar__container">
+        <a href="index.html" class="navbar__container--logo">
+          <img src="assets/logo/red-death-stranding-high-resolution-logo-transparent.png" alt="Death Stranding" />
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="main-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="story.html">Story</a></li>
+            <li><a href="characters.html">Characters</a></li>
+            <li><a class="is-active" href="editions.html">Editions</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a class="btn" href="login.html"><i class="fas fa-user"></i> Log In</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <header class="page-hero page-hero--poster">
+        <div class="page-hero__inner">
+          <p class="eyebrow">Cargo</p>
+          <h1>Editions</h1>
+          <p>Pick the loadout that matches how far you want to walk. Prices shown are promotional examples for this fan layout.</p>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="container editions-grid">
+          <article class="pricing-card">
+            <h2 class="pricing-card-heading">Standard</h2>
+            <p>The full journey on PS5. Streaming support depends on your PlayStation Plus plan.</p>
+            <p class="pricing-card-price"><span class="price">$69.99</span></p>
+            <ul>
+              <li><i class="fas fa-check"></i> Full game</li>
+              <li><i class="fas fa-check"></i> Online strand features</li>
+              <li><i class="fas fa-check"></i> Photo mode</li>
+            </ul>
+            <a href="contact.html" class="pricing-card__btn">Request info</a>
+          </article>
+          <article class="pricing-card">
+            <h2 class="pricing-card-heading">Deluxe Edition</h2>
+            <p>Digital extras for porters who want more color on the trail.</p>
+            <p class="pricing-card-price"><span class="price">$59.99</span></p>
+            <ul>
+              <li><i class="fas fa-check"></i> Full game</li>
+              <li><i class="fas fa-check"></i> Mini art book and soundtrack</li>
+              <li><i class="fas fa-check"></i> New in-game suit colors x2</li>
+              <li><i class="fas fa-check"></i> New power glove colors x2</li>
+              <li><i class="fas fa-check"></i> Additional backpack patches</li>
+            </ul>
+            <a href="contact.html" class="pricing-card__btn">Request info</a>
+          </article>
+          <article class="pricing-card expensive">
+            <h2 class="pricing-card-heading">Collector’s</h2>
+            <p>Physical artifacts, including a Magellan Man statue and a letter from Hideo Kojima.</p>
+            <p class="pricing-card-price"><span class="price">$229</span></p>
+            <ul>
+              <li><i class="fas fa-check"></i> Everything in Deluxe</li>
+              <li><i class="fas fa-check"></i> Collector’s box</li>
+              <li><i class="fas fa-check"></i> 15” Magellan Man statue</li>
+              <li><i class="fas fa-check"></i> 3” Dollman figurine</li>
+              <li><i class="fas fa-check"></i> Art cards</li>
+            </ul>
+            <a href="contact.html" class="pricing-card__btn">Request info</a>
+          </article>
+          <article class="pricing-card expensive">
+            <h2 class="pricing-card-heading">Digital Deluxe</h2>
+            <p>Same digital extras, delivered the moment you finish the download.</p>
+            <p class="pricing-card-price"><span class="price">$79.99</span></p>
+            <ul>
+              <li><i class="fas fa-check"></i> Full game</li>
+              <li><i class="fas fa-check"></i> Digital soundtrack</li>
+              <li><i class="fas fa-check"></i> Cosmetic pack</li>
+              <li><i class="fas fa-check"></i> Early access window when offered</li>
+            </ul>
+            <a href="contact.html" class="pricing-card__btn">Request info</a>
+          </article>
+        </div>
+        <p class="container legal-note">
+          DEATH STRANDING is a trademark of Sony Interactive Entertainment LLC. Created and developed by KOJIMA PRODUCTIONS.
+          This page is a fan recreation and does not sell games.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <h4>Questions</h4>
+          <ul><li><a href="faq.html">Pricing FAQ</a></li></ul>
+        </div>
+        <div>
+          <h4>News</h4>
+          <ul><li><a href="news.html">Updates</a></li></ul>
+        </div>
+        <div>
+          <h4>Account</h4>
+          <ul><li><a href="login.html">Log in</a></li></ul>
+        </div>
+        <div>
+          <h4>Home</h4>
+          <ul><li><a href="index.html">Back to home</a></li></ul>
+        </div>
+      </div>
+      <div class="footer__copyright">
+        <p>© <span id="year"></span> Fan project. Not a storefront.</p>
+      </div>
+    </footer>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

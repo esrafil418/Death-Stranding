@@ -3,374 +3,236 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Fan site for Death Stranding 2: On the Beach. Explore the story, characters, editions, and news."
+    />
     <link
       rel="icon"
-      href="/assets/logo/death-stranding-high-resolution-logo-grayscale-transparent.png"
+      href="assets/logo/death-stranding-high-resolution-logo-grayscale-transparent.png"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>DS</title>
+    <title>Death Stranding 2 | Home</title>
   </head>
   <body>
-    <!-- ! navabar  -->
+    <a class="skip-link" href="#main">Skip to content</a>
     <nav class="navbar">
       <div class="navbar__container">
-        <div class="navbar__container--logo">
-          <a href="index.html">
-            <img
-              src="/assets/logo/red-death-stranding-high-resolution-logo-transparent.png"
-              alt="Death Stranding Logo"
-              class="logo-default"
-              loading="lazy"
-            />
-          </a>
-        </div>
-
+        <a href="index.html" class="navbar__container--logo">
+          <img
+            src="assets/logo/red-death-stranding-high-resolution-logo-transparent.png"
+            alt="Death Stranding"
+          />
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
         <div class="main-menu">
           <ul>
+            <li><a class="is-active" href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="story.html">Story</a></li>
+            <li><a href="characters.html">Characters</a></li>
+            <li><a href="editions.html">Editions</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="faq.html">FAQ</a></li>
             <li>
-              <a href="index.html">Home</a>
-            </li>
-            <li>
-              <a href="#">About Us</a>
-            </li>
-            <li>
-              <a href="#">Blog</a>
-            </li>
-            <li>
-              <a class="btn" href="#"> <i class="fas fa-user"></i> Log In </a>
+              <a class="btn" href="login.html"><i class="fas fa-user"></i> Log In</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <!-- ! Hero  -->
-    <section class="hero">
-      <div class="hero__container">
-        <div class="hero-content">
-          <h1 class="hero-heading">DEATH STRANDING 2: ON THE BEACH</h1>
-          <p class="hero-text">
-            Embark on an inspiring mission of human connection beyond the UCA.
-            Sam with companions by his side sets out on a new journey to save
-            humanity from extinction. Join them as they traverse a world beset
-            by otherworldly enemies, obstacles and a haunting question: should
-            we have connected? Step by step, legendary game creator Hideo Kojima
-            changes the world once again.
+
+    <main id="main">
+      <section class="hero">
+        <div class="hero__container">
+          <div class="hero-content">
+            <p class="eyebrow">KOJIMA PRODUCTIONS</p>
+            <h1 class="hero-heading">DEATH STRANDING 2: ON THE BEACH</h1>
+            <p class="hero-text">
+              Embark on an inspiring mission of human connection beyond the UCA.
+              Sam and his companions set out to save humanity from extinction in
+              a world beset by otherworldly enemies — and a haunting question:
+              should we have connected?
+            </p>
+            <div class="hero-buttons">
+              <a href="about.html" class="hero-btn btn-primary">Get More Info</a>
+              <a href="#" class="hero-btn" data-open-trailer>
+                <i class="fas fa-play"></i> Play Trailer
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section video">
+        <div class="video__container">
+          <h2 class="video-heading">
+            From legendary game creator Hideo Kojima comes a genre-defying experience
+          </h2>
+          <div class="video-content">
+            <a href="#" data-open-trailer>
+              <img
+                src="assets/images/Lea.jpg"
+                alt="Death Stranding 2 trailer preview"
+                class="video-preview"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-heading">Keep the strand alive</h2>
+          <p class="section-copy">
+            Deliver hope across a shattered landscape. Build roads, share cargo,
+            and reconnect isolated cities — one step at a time.
           </p>
-          <div class="hero-buttons">
-            <a href="#" class="hero-btn btn-primary">Get More Info</a>
-            <a href="#" class="hero-btn"
-              ><i class="fas fa-laptop"></i> Play Trailer
-            </a>
+          <div class="feature-grid">
+            <article class="card feature-card">
+              <i class="fas fa-route"></i>
+              <h3>Open world traversal</h3>
+              <p>Read the terrain, weather, and time. Every delivery is a story about connection.</p>
+            </article>
+            <article class="card feature-card">
+              <i class="fas fa-users"></i>
+              <h3>Shared structures</h3>
+              <p>Leave signs, bridges, and safe houses for other porters walking the same strand.</p>
+            </article>
+            <article class="card feature-card">
+              <i class="fas fa-music"></i>
+              <h3>Cinematic score</h3>
+              <p>Woodkid, Chvrches, and an original soundtrack that carries the journey.</p>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- Video  -->
-    <section class="video">
-      <div class="video__container">
-        <h2 class="video-heading">
-          From legendary game creator Hideo Kojima comes a genre-defying
-          experience
-        </h2>
-        <div class="video-content">
-          <a href="#">
-            <img
-              src="/assets/images/Lea.jpg"
-              alt="Death Stranding 2 Trailer Preview"
-              class="video-preview"
-              loading="lazy"
-            />
-          </a>
-        </div>
-      </div>
-    </section>
-    <!-- Testimonials  -->
-    <section class="testimonials">
-      <div class="testimonials__container">
-        <h3 class="testimonials-heading">
-          As Sam Bridges, your mission is to deliver hope to humanity by
-          connecting the last survivors of a decimated America.
-        </h3>
-        <div class="testimonials-grid">
-          <div class="testimonials__card">
-            <p>
-              “one of the best open world games, and the best game I've played
-              on PS5. the story and the gameplay are both perfect with a massive
-              graphics that push the ps5 to it's limit like any other Kojima
-              game, from MGS1 to this date. also the music in this game is so
-              damn good with songs like Minus sixty-one and To the wilder from
-              Woodkid.”
-            </p>
+      </section>
 
-            <p>YSGR35</p>
-          </div>
-
-          <div class="testimonials__card">
-            <p>
-              “Death Stranding 2: On The Beach is an unforgettable adventure
-              that I firmly believe sits as one of the greatest games ever
-              created. With an emotional and thrilling narrative, a technically
-              brilliant gameplay system that builds upon its predecessor, and a
-              best-in-class soundtrack, Death Stranding 2 advances the industry
-              forward and innovates.”
-            </p>
-
-            <p>Final Weapon</p>
-          </div>
-
-          <div class="testimonials__card">
-            <p>
-              “Death Stranding 2: On The Beach is a triumph in what it sets out
-              to achieve. This isn't a game interested in converting willing
-              consumers into fans, it's a game that takes bold steps in order to
-              succeed what came before it. If you needed proof that Hideo Kojima
-              is still the titan of the industry that he's hailed as, this game
-              is that proof.”
-            </p>
-
-            <p>PlayStation Universe</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Pricing -->
-    <section class="pricing">
-      <div class="pricing__container">
-        <h3 class="pricing__container--header">Pricing</h3>
-        <p class="pricing-subheading">
-          Can you reunite the shattered world, one step at a time?
-        </p>
-        <div class="pricing-grid">
-          <!-- Pricing Card 1 -->
-          <div class="pricing-card">
-            <div class="pricing-card-header">
-              <h4 class="pricing-card-heading">Deluxe Edition</h4>
-              <p class="pricing-card-subheading">
-                PS5 game streaming supported only with PlayStation Plus Premium
-                subscription
+      <section class="section testimonials">
+        <div class="container">
+          <h2 class="section-heading">
+            As Sam Bridges, your mission is to deliver hope
+          </h2>
+          <p class="section-copy">
+            Connecting the last survivors of a decimated America — and now, the world beyond.
+          </p>
+          <div class="testimonials-grid">
+            <article class="testimonials__card">
+              <p>
+                “One of the best open world games, and the best game I've played
+                on PS5. The story and the gameplay are both perfect, with
+                graphics that push the hardware like any other Kojima game.”
               </p>
-              <p class="pricing-card-price">
-                <span class="price">$59.99</span>
+              <p>YSGR35</p>
+            </article>
+            <article class="testimonials__card">
+              <p>
+                “An unforgettable adventure with an emotional narrative, a
+                technically brilliant gameplay system, and a best-in-class soundtrack.”
               </p>
-            </div>
-            <div class="pricing-card-body">
+              <p>Final Weapon</p>
+            </article>
+            <article class="testimonials__card">
+              <p>
+                “A triumph in what it sets out to achieve. If you needed proof
+                that Hideo Kojima is still a titan of the industry, this game is that proof.”
+              </p>
+              <p>PlayStation Universe</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-heading">Choose your cargo</h2>
+          <p class="section-copy">Can you reunite the shattered world, one step at a time?</p>
+          <div class="pricing-grid">
+            <article class="pricing-card">
+              <h3 class="pricing-card-heading">Deluxe Edition</h3>
+              <p>Full game plus digital extras for porters who want more color on the trail.</p>
+              <p class="pricing-card-price"><span class="price">$59.99</span></p>
               <ul>
-                <li><i class="fas fa-check"></i> Full game.</li>
-                <li>
-                  <i class="fas fa-check"></i>Digital mini art book and mini
-                  soundtrack
-                </li>
-                <li><i class="fas fa-check"></i>New in-game suit colors x2</li>
-                <li>
-                  <i class="fas fa-check"></i>New in-game power glove colors x2
-                </li>
-                <li>
-                  <i class="fas fa-check"></i>Additional in-game backpack
-                  patches.
-                </li>
+                <li><i class="fas fa-check"></i> Full game</li>
+                <li><i class="fas fa-check"></i> Mini art book and soundtrack</li>
+                <li><i class="fas fa-check"></i> New suit and power glove colors</li>
               </ul>
-              <a href="#" class="pricing-card__btn">Get Started</a>
-            </div>
-          </div>
-          <!-- Pricing Card 2 -->
-          <div class="pricing-card expensive">
-            <div class="pricing-card-header">
-              <h4 class="pricing-card-heading">Premium</h4>
-              <p class="pricing-card-subheading">
-                PS5 game streaming supported only with PlayStation Plus Premium
-                subscription
-              </p>
-              <p class="pricing-card-price">
-                <span class="price">$229</span>
-              </p>
-            </div>
-            <div class="pricing-card-body">
-              <p>Everything from the Deluxe Edition plus:</p>
+              <a href="editions.html" class="pricing-card__btn">View editions</a>
+            </article>
+            <article class="pricing-card expensive">
+              <h3 class="pricing-card-heading">Collector’s Edition</h3>
+              <p>Physical artifacts for those who want the beach in their hands.</p>
+              <p class="pricing-card-price"><span class="price">$229</span></p>
               <ul>
-                <li><i class="fas fa-check"></i>Collector’s Box</li>
-                <li><i class="fas fa-check"></i>15” Magellan Man Statue</li>
-                <li><i class="fas fa-check"></i>3” Dollman figurine</li>
-                <li><i class="fas fa-check"></i>Art cards</li>
-                <li><i class="fas fa-check"></i>Letter from Hideo Kojima</li>
+                <li><i class="fas fa-check"></i> Everything in Deluxe</li>
+                <li><i class="fas fa-check"></i> Collector’s box and statue</li>
+                <li><i class="fas fa-check"></i> Letter from Hideo Kojima</li>
               </ul>
-              <a href="#" class="pricing-card__btn">Get Started</a>
-            </div>
+              <a href="editions.html" class="pricing-card__btn">View editions</a>
+            </article>
           </div>
         </div>
-        <p class="pricing-footer">
-          ©2021 Sony Interactive Entertainment Inc. DEATH STRANDING is a
-          trademark of Sony Interactive Entertainment LLC. Created and developed
-          by KOJIMA PRODUCTIONS.
-        </p>
-      </div>
-    </section>
-    <!-- FAQ -->
-    <section class="faq">
-      <div class="faq__container">
-        <h3 class="faq__header--section">Frequently Asked Questions</h3>
-        <ul class="faq-menu">
-          <li class="active">All</li>
-          <li>Getting Started</li>
-          <li>Pricing</li>
-        </ul>
-        <div class="faq-content">
-          <div class="faq-group">
-            <div class="faq-group-header">
-              <h4 class="faq-question">
-                Can I see the trophy display and the white Ludens hallway when I
-                visit the office?
-              </h4>
-              <i class="fas fa-minus"></i>
-            </div>
-            <div class="faq-group-body open">
-              <p>
-                Unfortunately, this area is not open to the public as it is the
-                entrance to the private office. In addition, access to the
-                office floor itself is prohibited as a result of building
-                security measures.
-              </p>
-            </div>
-          </div>
+      </section>
+    </main>
 
-          <div class="faq-group">
-            <div class="faq-group-header">
-              <h4 class="faq-question">
-                Do you accept pitches for new ideas and game concepts?
-              </h4>
-              <i class="fas fa-plus"></i>
-            </div>
-            <div class="faq-group-body">
-              <p>
-                KOJIMA PRODUCTIONS is focused on internally developed original
-                concepts, and therefore does not accept pitches from external
-                sources.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-group">
-            <div class="faq-group-header">
-              <h4 class="faq-question">
-                Can I receive a signature from Hideo Kojima and / or other
-                Kojima Productions staff?
-              </h4>
-              <i class="fas fa-plus"></i>
-            </div>
-            <div class="faq-group-body">
-              <p>
-                Due to the large volume of similar inquiries it is the policy of
-                KOJIMA PRODUCTIONS to decline all signature requests at this
-                time.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-group">
-            <div class="faq-group-header">
-              <h4 class="faq-question">
-                Where can I send presents and letters to KOJIMA PRODUCTIONS?
-              </h4>
-              <i class="fas fa-plus"></i>
-            </div>
-            <div class="faq-group-body">
-              <p>
-                Thank you for always supporting us, but we do not have a
-                location that accepts letters and presents. Please do note that
-                we cannot reply back to all that letters that are sent to us.
-                Thank you again for your support for KOJIMA PRODUCTIONS.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-group">
-            <div class="faq-group-header">
-              <h4 class="faq-question">
-                Where can I purchase KOJIMA PRODUCTIONS merchandise?
-              </h4>
-              <i class="fas fa-plus"></i>
-            </div>
-            <div class="faq-group-body">
-              <p>
-                KOJIMA PRODUCTIONS limited edition merchandise is currently
-                available at the Shinagawa Season Terrace and Akihabaro UDX
-                Famima!! stores. Official merchandise is also available via the
-                Store section on our website.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-group">
-            <div class="faq-group-header">
-              <h4 class="faq-question">Is there an intern program?</h4>
-              <i class="fas fa-plus"></i>
-            </div>
-            <div class="faq-group-body">
-              <p>
-                There is no intern program at this time. However, a future
-                program is under consideration. Updates will be posted via the
-                Careers page.
-              </p>
-            </div>
-          </div>
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:contact@kojimaproductions.jp">contact@kojimaproductions.jp</a></li>
+            <li><a href="contact.html">Write a message</a></li>
+          </ul>
         </div>
-      </div>
-    </section>
-    <!-- Footer -->
-    <footer class="footer bg-black">
-      <div class="footer__container">
-        <div class="footer-grid">
-          <div class="footer__contact">
-            <a href="index.html">
-              <!-- <img
-                src="/assets/logo/death-stranding-high-resolution-logo-grayscale-transparent.png"
-                alt="Death Stranding Logo"
-                loading="lazy"
-              /> -->
-            </a>
-            <div class="footer__contact">
-              <h4>Contact:</h4>
-              <ul>
-                <li>
-                  <a href="#">contact@kojimaproductions.jp</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <h4>Company</h4>
-            <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Our Process</a></li>
-              <li><a href="#">Join Our Team</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Resources</h4>
-            <ul>
-              <li><a href="#">News</a></li>
-              <li><a href="#">Research</a></li>
-              <li><a href="#">Recent Projects</a></li>
-            </ul>
-          </div>
-          <div class="footer__card">
-            <h4>Subscribe to Newsletter</h4>
-            <form>
-              <input type="email" id="email" placeholder="Enter your email" />
-              <button type="submit" class="footer__btn">Subscribe</button>
-            </form>
-          </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="story.html">The Story</a></li>
+            <li><a href="characters.html">Characters</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="news.html">News</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="editions.html">Editions</a></li>
+          </ul>
+        </div>
+        <div class="form-card" style="margin: 0; width: auto">
+          <h4>Subscribe to newsletter</h4>
+          <form data-form data-success="You are on the strand. Welcome aboard.">
+            <input type="email" name="email" placeholder="Enter your email" required />
+            <button type="submit" class="footer__btn">Subscribe</button>
+          </form>
         </div>
       </div>
       <div class="footer__copyright">
-        <p>© 2024 KOJIMA PRODUCTIONS. All rights reserved.</p>
+        <p>
+          © <span id="year"></span> Fan project. Death Stranding is a trademark of
+          Sony Interactive Entertainment. Created by KOJIMA PRODUCTIONS.
+        </p>
       </div>
     </footer>
+
+    <div class="trailer-modal" aria-hidden="true">
+      <div class="trailer-modal__dialog">
+        <button class="modal-close" type="button" data-close-trailer aria-label="Close trailer">
+          <i class="fas fa-xmark"></i>
+        </button>
+        <iframe title="Death Stranding 2 trailer" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="./js/main.js"></script>
   </body>
 </html>
