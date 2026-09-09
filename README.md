@@ -1,7 +1,7 @@
 ## Death Stranding Landing Page
 
 ![Hero Header](assets/images/for%20github.png)
-[🚀 Live Preview](https://death-stranding-fan.netlify.app/)
+[🚀 Live Preview](https://death-stranding.vercel.app/)
 
 A modern, fully responsive **static landing page** inspired by the *Death Stranding* promotional websites.
 This project showcases a clean and adaptive layout built with **HTML5** and **CSS3**, optimized for **mobile, tablet, and desktop** screens.
