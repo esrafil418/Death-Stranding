@@ -3,8 +3,6 @@
 ![Hero Header](assets/images/for%20github.png)
 [🚀 Live Preview](https://death-stranding-fan.netlify.app/)
 
-[![wakatime](https://wakatime.com/badge/user/396dff75-025e-4679-bd2e-c74ec170e549/project/48e83750-7083-4a40-a358-4fac66cda586.svg)](https://wakatime.com/badge/user/396dff75-025e-4679-bd2e-c74ec170e549/project/48e83750-7083-4a40-a358-4fac66cda586)
-
 A modern, fully responsive **static landing page** inspired by the *Death Stranding* promotional websites.
 This project showcases a clean and adaptive layout built with **HTML5** and **CSS3**, optimized for **mobile, tablet, and desktop** screens.
 
