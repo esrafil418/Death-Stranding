@@ -89,42 +89,4 @@
     });
   });
 
-  const modal = document.querySelector(".trailer-modal");
-  const frame = document.querySelector(".trailer-modal iframe");
-  const openers = document.querySelectorAll("[data-open-trailer]");
-  const closers = document.querySelectorAll("[data-close-trailer]");
-  const trailerSrc = "https://www.youtube.com/embed/bH1lHMiu4u8?autoplay=1";
-
-  function closeTrailer() {
-    if (!modal) return;
-    modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
-    if (frame) frame.src = "";
-    document.body.classList.remove("modal-open");
-  }
-
-  openers.forEach(function (opener) {
-    opener.addEventListener("click", function (event) {
-      event.preventDefault();
-      if (!modal || !frame) return;
-      frame.src = trailerSrc;
-      modal.classList.add("is-open");
-      modal.setAttribute("aria-hidden", "false");
-      document.body.classList.add("modal-open");
-    });
-  });
-
-  closers.forEach(function (closer) {
-    closer.addEventListener("click", closeTrailer);
-  });
-
-  if (modal) {
-    modal.addEventListener("click", function (event) {
-      if (event.target === modal) closeTrailer();
-    });
-  }
-
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") closeTrailer();
-  });
 })();

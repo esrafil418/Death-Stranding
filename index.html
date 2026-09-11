@@ -24,7 +24,7 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <nav class="navbar">
       <div class="navbar__container">
-        <a href="index.html" class="navbar__container--logo">
+        <a href="index.html" class="navbar__container--logo" aria-label="Home">
           <img
             src="assets/logo/red-death-stranding-high-resolution-logo-transparent.png"
             alt="Death Stranding"
@@ -73,7 +73,12 @@
               <a href="about.html" class="hero-btn btn-primary"
                 >Get More Info</a
               >
-              <a href="#" class="hero-btn" data-open-trailer>
+              <a
+                href="https://www.youtube.com/watch?v=eT_A2gPhTIw"
+                class="hero-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i class="fas fa-play"></i> Play Trailer
               </a>
             </div>
@@ -88,7 +93,11 @@
             experience
           </h2>
           <div class="video-content">
-            <a href="#" data-open-trailer>
+            <a
+              href="https://www.youtube.com/watch?v=eT_A2gPhTIw"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 src="assets/images/Lea.jpg"
                 alt="Death Stranding 2 trailer preview"
@@ -202,7 +211,6 @@
                 >View editions</a
               >
             </article>
-            <br>
             <article class="pricing-card expensive">
               <h3 class="pricing-card-heading">Collector’s Edition</h3>
               <p>
@@ -273,23 +281,6 @@
       </div>
     </footer>
 
-    <div class="trailer-modal" aria-hidden="true">
-      <div class="trailer-modal__dialog">
-        <button
-          class="modal-close"
-          type="button"
-          data-close-trailer
-          aria-label="Close trailer"
-        >
-          <i class="fas fa-xmark"></i>
-        </button>
-        <iframe
-          title="Death Stranding 2 trailer"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
     <div class="toast" id="toast" role="status"></div>
     <script src="./js/main.js"></script>
   </body>

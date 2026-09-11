@@ -179,7 +179,7 @@ select {
 }
 
 .navbar__container {
-  width: min(1240px, calc(100% - 28px));
+  width: min(var(--max-width), calc(100% - 32px));
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -187,6 +187,13 @@ select {
   gap: 16px;
   position: relative;
   z-index: 1003;
+}
+
+.navbar__container--logo {
+  display: block;
+  position: relative;
+  z-index: 1004;
+  flex-shrink: 0;
 }
 
 .navbar__container--logo img {
@@ -243,12 +250,13 @@ select {
 }
 
 .hero__container {
-  width: min(1180px, calc(100% - 32px));
+  width: min(var(--max-width), calc(100% - 32px));
   margin: 0 auto;
   min-height: min(78vh, 760px);
   display: flex;
-  align-items: center;
-  padding: 48px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 40px 48px;
   background-image: linear-gradient(rgba(6, 10, 20, 0.55), rgba(6, 10, 20, 0.42)),
     url("../assets/images/death-stranding-solo-baby.jpg");
   background-repeat: no-repeat;
@@ -272,6 +280,9 @@ select {
   width: min(640px, 100%);
   position: relative;
   z-index: 2;
+  text-align: left;
+  margin: 0;
+  align-self: flex-start;
 }
 
 .eyebrow {
@@ -310,7 +321,7 @@ select {
 }
 
 .page-hero__inner {
-  width: min(1180px, calc(100% - 32px));
+  width: min(var(--max-width), calc(100% - 32px));
   margin: 0 auto;
   padding: 48px 40px;
   border-radius: 16px;
@@ -405,6 +416,7 @@ select {
 .character-grid,
 .news-grid,
 .editions-grid,
+.pricing-grid,
 .stat-grid {
   display: grid;
   gap: 24px;
@@ -900,8 +912,23 @@ select {
   }
 
   .hero__container {
-    background-image: linear-gradient(rgba(6, 10, 20, 0.55), rgba(6, 10, 20, 0.42)),
+    min-height: min(72vh, 680px);
+    align-items: flex-end;
+    background-image: linear-gradient(
+        to top,
+        rgba(6, 10, 20, 0.88) 0%,
+        rgba(6, 10, 20, 0.45) 42%,
+        rgba(6, 10, 20, 0.18) 100%
+      ),
       url("../assets/images/death-stranding-Lea.jpg");
+  }
+
+  .hero__container::before {
+    background: none;
+  }
+
+  .hero-content {
+    align-self: flex-end;
   }
 
   .hero-buttons .hero-btn {
